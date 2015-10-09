@@ -1,0 +1,33 @@
+# Mac extras#
+.DS_Store
+
+# Idea Files #
+.idea/
+.idea/*
+*.ipr
+*.iml
+*.iws
+*.ids
+workspace.xml
+tasks.xml
+
+# Compiled Files #
+*.class
+*/build/*
+build/*
+*/out/*
+out/*
+*/target/*
+
+# Package Files #
+*.war
+*.ear
+
+#Logs
+*.log
+/classes/
+*/logs/*
+
+#MANIFEST
+*/MANIFEST.MF
+MANIFEST.MF
