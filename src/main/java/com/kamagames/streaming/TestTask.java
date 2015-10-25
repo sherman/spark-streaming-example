@@ -4,7 +4,6 @@ import com.google.common.base.Objects;
 import com.google.common.base.Splitter;
 import com.google.common.collect.FluentIterable;
 import com.google.common.collect.ImmutableList;
-import org.apache.log4j.Level;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
@@ -62,8 +61,8 @@ public class TestTask implements Serializable {
         //conf.setMaster("spark://smallkiller:7077");
         conf.setMaster("local[*]");
 
-        org.apache.log4j.Logger.getLogger("org").setLevel(Level.OFF);
-        org.apache.log4j.Logger.getLogger("akka").setLevel(Level.OFF);
+        ((ch.qos.logback.classic.Logger) LoggerFactory.getLogger("org")).setLevel(ch.qos.logback.classic.Level.OFF);
+        ((ch.qos.logback.classic.Logger) LoggerFactory.getLogger("akka")).setLevel(ch.qos.logback.classic.Level.OFF);
 
         JavaSparkContext sc = new JavaSparkContext(conf);
         JavaRDD<String> lines = sc.textFile("/home/sherman/webapp_logs/webapp.log");
